@@ -1,7 +1,19 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
     i18n: {
         locales: ['uk', 'en'],
-        defaultLocale: 'en',
+        defaultLocale: 'uk',
+    },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '1337',
+                pathname: '/uploads/**',
+            },
+        ],
     },
 };
+
+export default nextConfig;
