@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="543f2f42-2e8b-42a1-9a5f-d00e44f500ca" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/next.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/postcss.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/config/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/config/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/config/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/config/middlewares.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/config/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/config/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/database/migrations/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/public/uploads/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/admin/app.example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/admin/vite.config.example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/culture/content-types/culture/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/culture/controllers/culture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/culture/routes/culture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/culture/services/culture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/home-page/content-types/home-page/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/home-page/controllers/home-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/home-page/routes/home-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/home-page/services/home-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/news/content-types/news/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/news/controllers/news.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/news/routes/news.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/news/services/news.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/sport/content-types/sport/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/sport/controllers/sport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/sport/routes/sport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/api/sport/services/sport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/components/shared/seo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/extensions/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/types/generated/components.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strapi-cms/types/generated/contentTypes.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/strapi-usage.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="31Pc7pH6IPKp2P8uD33BqbGpW4S" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="543f2f42-2e8b-42a1-9a5f-d00e44f500ca" name="Changes" comment="" />
+      <created>1755428983813</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755428983813</updated>
+      <workItem from="1755428984955" duration="5789000" />
+      <workItem from="1755436339620" duration="3363000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+  </component>
+</project>
