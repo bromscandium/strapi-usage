@@ -4,19 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="543f2f42-2e8b-42a1-9a5f-d00e44f500ca" name="Changes" comment="init front">
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/news/[slug]/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/news/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/components/header/header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/lib/strapi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/styles/globals.scss" afterDir="false" />
+    <list default="true" id="543f2f42-2e8b-42a1-9a5f-d00e44f500ca" name="Changes" comment="fixed front and home page">
+      <change afterPath="$PROJECT_DIR$/next-frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/[slug]/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-frontend/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/postcss.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/news/[slug]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/news/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-frontend/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/components/header/header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/src/lib/strapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/lib/strapi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/src/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strapi-cms/src/api/home-page/content-types/home-page/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/strapi-cms/src/api/home-page/content-types/home-page/schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strapi-cms/src/api/news/content-types/news/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/strapi-cms/src/api/news/content-types/news/schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strapi-cms/types/generated/contentTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/strapi-cms/types/generated/contentTypes.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +39,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "bromscandium"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bromscandium&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/bromscandium/strapi-usage.git",
-    "accountId": "25e2d8d2-252c-424b-84b6-cc8d9e01f666"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bromscandium/strapi-usage.git&quot;,
+    &quot;accountId&quot;: &quot;25e2d8d2-252c-424b-84b6-cc8d9e01f666&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -56,30 +62,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Desktop/strapi-usage/next-frontend/src/app/news/[slug]",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/strapi-usage/next-frontend/src/app/news/[slug]&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Desktop\strapi-usage\next-frontend\src\app\news\[slug]" />
       <recent name="D:\Desktop\strapi-usage\next-frontend\src\app\news" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\strapi-usage\next-frontend\public" />
+      <recent name="D:\Desktop\strapi-usage\next-frontend\src\app\[locale]\news" />
+      <recent name="D:\Desktop\strapi-usage\next-frontend\src\app\[locale]" />
       <recent name="D:\Desktop\strapi-usage\next-frontend\src\app" />
       <recent name="D:\Desktop\strapi-usage\next-frontend\src" />
     </key>
@@ -99,7 +108,8 @@
       <option name="presentableId" value="Default" />
       <updated>1755428983813</updated>
       <workItem from="1755428984955" duration="5789000" />
-      <workItem from="1755436339620" duration="4770000" />
+      <workItem from="1755436339620" duration="12445000" />
+      <workItem from="1755526919739" duration="20687000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -109,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755447280849</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="init front">
+      <option name="closed" value="true" />
+      <created>1755448633096</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755448633096</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="init front" />
-    <option name="LAST_COMMIT_MESSAGE" value="init front" />
+    <MESSAGE value="fixed front and home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed front and home page" />
   </component>
 </project>

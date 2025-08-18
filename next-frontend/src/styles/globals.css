@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@tailwind utilities;
+
+body {
+    @apply bg-white text-neutral-950;
+    font-family: Ubuntu, 'Noto Sans', 'Fira Sans', Arial, sans-serif;
+}
+
+html[lang="uk-UA"] {
+    font-size: 1.0rem
+}
+
+html[lang="en"] {
+    font-size: 1.0rem
+}
+
+
+.container {
+    @apply max-w-6xl mx-auto px-4;
+}

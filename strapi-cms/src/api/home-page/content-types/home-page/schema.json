@@ -25,22 +25,6 @@
       "required": true,
       "unique": true
     },
-    "banner": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "seo": {
       "type": "component",
       "pluginOptions": {
