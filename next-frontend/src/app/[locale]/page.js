@@ -1,4 +1,5 @@
 import { getHome, mediaUrl } from '@/lib/strapi';
+import Image from "next/image";
 
 export const revalidate = 300;
 
@@ -24,17 +25,18 @@ export default async function Page({ params }) {
     const { locale } = await params;
     const d = await getHome({ locale, revalidate });
     const seo = d?.data?.seo;
-    const image = mediaUrl(seo?.ogImage?.url);
+    const img = mediaUrl(seo?.ogImage?.url);
 
     return (
         <main className="container py-8">
             <div className="flex items-center gap-3">
-                {image && (
-                    <img
-                        src={image}
-                        alt={seo?.metaTitle || ''}
+                {img && (
+                    <Image
+                        src={mediaUrl(img)}
+                        alt={d.title}
+                        width={40}
+                        height={40}
                         className="rounded-lg max-h-12 object-cover"
-                        style={{ width: 'auto', maxWidth: 100 }}
                     />
                 )}
                 <h1 className="text-3xl font-bold m-0">

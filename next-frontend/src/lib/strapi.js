@@ -33,7 +33,7 @@ export async function getHome({ locale = 'en', revalidate = 300 } = {}) {
 }
 
 export async function getNewsList({ locale = 'en' } = {}) {
-    const base = `?locale=${encodeURIComponent(locale)}`;
+    const base = `?locale=${encodeURIComponent(locale)}&populate[banner][populate]=*`;
 
     const [sports, culture] = await Promise.all([
         strapi(`/api/${CT.sports}${base}`),
@@ -57,18 +57,3 @@ export async function getNewsBySlug({ locale = 'en', slug }) {
 
     return (s?.data?.[0] ?? c?.data?.[0]) || null;
 }
-
-
-export async function getNewsByDocumentId({ locale = 'en', documentId }) {
-    const q =
-        `?filters[documentId][$eq]=${encodeURIComponent(documentId)}&locale=${encodeURIComponent(locale)}`;
-
-    const [s, c] = await Promise.all([
-        strapi(`/api/${CT.sports}${q}`),
-        strapi(`/api/${CT.culture}${q}`),
-    ]);
-
-    return (s?.data?.[0] ?? c?.data?.[0]) || null;
-}
-
-

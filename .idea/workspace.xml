@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="543f2f42-2e8b-42a1-9a5f-d00e44f500ca" name="Changes" comment="fixed front and home page">
-      <change afterPath="$PROJECT_DIR$/next-frontend/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/[slug]/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/postcss.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/news/[slug]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/news/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/components/header/header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/[locale]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-frontend/src/lib/strapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/lib/strapi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strapi-cms/src/api/home-page/content-types/home-page/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/strapi-cms/src/api/home-page/content-types/home-page/schema.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strapi-cms/src/api/news/content-types/news/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/strapi-cms/src/api/news/content-types/news/schema.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strapi-cms/types/generated/contentTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/strapi-cms/types/generated/contentTypes.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +95,7 @@
       <updated>1755428983813</updated>
       <workItem from="1755428984955" duration="5789000" />
       <workItem from="1755436339620" duration="12445000" />
-      <workItem from="1755526919739" duration="20687000" />
+      <workItem from="1755526919739" duration="21955000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -127,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755448633096</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed front and home page">
+      <option name="closed" value="true" />
+      <created>1755557482009</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755557482009</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
