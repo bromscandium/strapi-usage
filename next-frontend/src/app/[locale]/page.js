@@ -33,7 +33,7 @@ export default async function Page({ params }) {
                 {img && (
                     <Image
                         src={mediaUrl(img)}
-                        alt={d.title}
+                        alt={seo?.metaTitle}
                         width={40}
                         height={40}
                         className="rounded-lg max-h-12 object-cover"

@@ -33,7 +33,8 @@ export async function getHome({ locale = 'en', revalidate = 300 } = {}) {
 }
 
 export async function getNewsList({ locale = 'en' } = {}) {
-    const base = `?locale=${encodeURIComponent(locale)}&populate[banner][populate]=*`;
+    const base = `?locale=${encodeURIComponent(locale)}&populate[banner][populate]=*&sort=publishedAt:desc`;
+
 
     const [sports, culture] = await Promise.all([
         strapi(`/api/${CT.sports}${base}`),
