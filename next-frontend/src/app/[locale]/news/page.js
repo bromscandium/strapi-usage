@@ -8,7 +8,6 @@ export default async function NewsList({ params }) {
     const { locale } = await params;
     const { sports, culture } = await getNewsList({ locale });
 
-    console.log(sports);
     return (
         <main className="container py-8">
             <h1 className="text-3xl font-bold mb-8">

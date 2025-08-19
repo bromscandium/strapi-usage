@@ -49,7 +49,9 @@ export async function getNewsList({ locale = 'en' } = {}) {
 
 export async function getNewsBySlug({ locale = 'en', slug }) {
     const q =
-        `?filters[slug][$eq]=${encodeURIComponent(slug)}&locale=${encodeURIComponent(locale)}`;
+        `?filters[slug][$eq]=${encodeURIComponent(slug)}` +
+        `&locale=${encodeURIComponent(locale)}` +
+        `&populate[banner][populate]=*&populate[seo][populate]=*`;
 
     const [s, c] = await Promise.all([
         strapi(`/api/${CT.sports}${q}`),

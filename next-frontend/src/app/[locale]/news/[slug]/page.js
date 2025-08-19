@@ -1,20 +1,26 @@
-import { getNewsBySlug, mediaUrl } from '@/lib/strapi';
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { notFound } from 'next/navigation';
+import Image from "next/image";
+import { getNewsBySlug, mediaUrl } from '@/lib/strapi';
 
 export const revalidate = 300;
 
 export async function generateMetadata({ params }) {
     const { locale, slug } = await params;
     const d = await getNewsBySlug({ locale, slug });
+
     if (!d) return {};
-    const a = d.attributes;
-    const og = a.seo?.ogImage?.data?.attributes?.url || a.banner?.data?.attributes?.url;
+    const og = d.seo?.ogImage?.url || d.banner?.url;
 
     return {
-        title: a.seo?.metaTitle || a.title,
-        description: a.seo?.metaDescription || '',
-        alternates: { canonical: a.seo?.canonicalUrl || undefined },
-        openGraph: { title: a.seo?.metaTitle || a.title, description: a.seo?.metaDescription || '', images: og ? [mediaUrl(og)] : [] },
+        title: d.seo?.metaTitle || d.title,
+        description: d.seo?.metaDescription || '',
+        alternates: { canonical: d.seo?.canonicalUrl || undefined },
+        openGraph: {
+            title: d.seo?.metaTitle || d.title,
+            description: d.seo?.metaDescription || '',
+            images: og ? [mediaUrl(og)] : [],
+        },
     };
 }
 
@@ -23,17 +29,23 @@ export default async function Page({ params }) {
     const d = await getNewsBySlug({ locale, slug });
     if (!d) return notFound();
 
-    const a = d.attributes;
-    const banner = a.banner?.data?.attributes;
+    const banner = d.banner;
+    const content = d.content;
 
     return (
-        <main className="container py-8">
-            {banner?.url && (
-                <img src={mediaUrl(banner.url)} alt={banner?.alternativeText || ''} width={banner?.width || 1200} height={banner?.height || 630} />
+        <main className="prose mx-auto">
+            {banner && (
+                <Image
+                    src={mediaUrl(banner.url)}
+                    alt={d.seo?.metaTitle}
+                    width={banner?.width }
+                    height={banner?.height }
+                    className="mt-10"
+                />
             )}
-            <h1 className="mt-6 text-3xl font-bold">{a.title}</h1>
-            {/* Якщо контент у тебе HTML: */}
-            {a.content && <article dangerouslySetInnerHTML={{ __html: a.content }} />}
+            <h1 className="mt-6 text-3xl font-bold">{d.title}</h1>
+            <BlocksRenderer content={content} />
+            <h5>{d.datePublished}</h5>
         </main>
     );
 }
