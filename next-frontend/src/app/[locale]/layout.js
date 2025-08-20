@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import Header from '@/components/header/header';
+import Header from '@/components/header/Header';
 
 export default async function LocaleLayout({children, params}) {
     const {locale} = await params;

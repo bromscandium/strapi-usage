@@ -20,19 +20,19 @@ export default function Header({ locale = 'en' }) {
     const otherLocale = locale.startsWith('uk') ? 'en' : 'uk';
 
     return (
-        <header className="border-b">
+        <header className="border-b mb-10">
             <nav className="container mx-auto px-4 py-3 flex items-center gap-4">
 
                 <Link
                     href={withLocale('/', locale)}
-                    className={`px-3 py-2 rounded-lg min-w-[90px] text-center ${isActive('/') ? 'bg-black text-white' : 'hover:bg-gray-100'}`}
+                    className={`px-3 py-2 rounded min-w-[90px] duration-200 text-center ${isActive('/') ? 'bg-black text-white' : 'hover:bg-gray-200'}`}
                 >
                     {locale.startsWith('uk') ? 'Головна' : 'Home'}
                 </Link>
 
                 <Link
                     href={withLocale('/news', locale)}
-                    className={`px-3 py-2 rounded-lg min-w-[90px] text-center ${isActive('/') ? 'bg-black text-white' : 'hover:bg-gray-100'}`}
+                    className={`px-3 py-2 rounded min-w-[90px] duration-200 text-center ${isActive('/') ? 'bg-black text-white' : 'hover:bg-gray-200'}`}
                 >
                     {locale.startsWith('uk') ? 'Новини' : 'News'}
                 </Link>
@@ -41,7 +41,7 @@ export default function Header({ locale = 'en' }) {
 
                 <Link
                     href={swapLocale(pathname, otherLocale)}
-                    className="px-3 py-2 rounded-lg border hover:bg-gray-50"
+                    className="px-3 py-2 rounded border  hover:bg-gray-200 duration-200"
                 >
                     {otherLocale.toUpperCase()}
                 </Link>

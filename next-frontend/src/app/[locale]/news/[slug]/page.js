@@ -2,6 +2,7 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { notFound } from 'next/navigation';
 import Image from "next/image";
 import { getNewsBySlug, mediaUrl } from '@/lib/strapi';
+import BackButton from "@/components/button/BackButton";
 
 export const revalidate = 300;
 
@@ -34,13 +35,13 @@ export default async function Page({ params }) {
 
     return (
         <main className="prose mx-auto">
+            <BackButton/>
             {banner && (
                 <Image
                     src={mediaUrl(banner.url)}
                     alt={d.seo?.metaTitle}
                     width={banner?.width }
                     height={banner?.height }
-                    className="mt-10"
                 />
             )}
             <h1 className="mt-6 text-3xl font-bold">{d.title}</h1>
