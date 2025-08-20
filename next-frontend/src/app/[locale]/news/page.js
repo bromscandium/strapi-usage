@@ -1,8 +1,25 @@
-import { getNewsList, mediaUrl } from '@/lib/strapi';
+import {getNews, getNewsList, mediaUrl} from '@/lib/strapi';
 import Image from 'next/image';
 
-
 export const revalidate = 300;
+
+export async function generateMetadata({ params }) {
+    const { locale } = await params;
+    const d = await getNews({ locale, revalidate });
+    const seo = d?.data?.seo;
+    const og = seo?.ogImage?.url;
+
+    return {
+        title: seo?.metaTitle || (locale === 'uk' ? 'Новини' : 'News'),
+        description: seo?.metaDescription || '',
+        alternates: { canonical: seo?.canonicalUrl || undefined },
+        openGraph: {
+            title: seo?.metaTitle || (locale === 'uk' ? 'Новини' : 'News'),
+            description: seo?.metaDescription || '',
+            images: og ? [mediaUrl(og)] : [],
+        },
+    };
+}
 
 export default async function NewsList({ params }) {
     const { locale } = await params;
@@ -39,6 +56,9 @@ export default async function NewsList({ params }) {
                                     <h3 className="text-lg font-semibold leading-snug mb-2 line-clamp-2">
                                         {n.title}
                                     </h3>
+                                    <h6 className="text-xs font-semibold leading-snug mt-5 line-clamp-2">
+                                        {n.datePublished}
+                                    </h6>
                                 </a>
                             </li>
                         );
@@ -71,6 +91,9 @@ export default async function NewsList({ params }) {
                                     <h3 className="text-lg font-semibold leading-snug mb-2 line-clamp-2">
                                         {n.title}
                                     </h3>
+                                    <h6 className="text-xs font-semibold leading-snug mt-5 line-clamp-2">
+                                        {n.datePublished}
+                                    </h6>
                                 </a>
                             </li>
                         );

@@ -32,9 +32,37 @@ export async function getHome({ locale = 'en', revalidate = 300 } = {}) {
     return data || null;
 }
 
-export async function getNewsList({ locale = 'en' } = {}) {
-    const base = `?locale=${encodeURIComponent(locale)}&populate[banner][populate]=*&sort=publishedAt:desc`;
+export async function getLatestNews({ locale = 'en'} = {}) {
+    const base =
+        `?locale=${encodeURIComponent(locale)}` +
+        `&fields=title,slug,datePublished` +
+        `&sort=datePublished:desc` +
+        `&populate[banner][fields][]=url`+
+        `&pagination[page]=1&pagination[pageSize]=${3}`;
 
+    const [sports, culture] = await Promise.all([
+        strapi(`/api/${CT.sports}${base}`),
+        strapi(`/api/${CT.culture}${base}`),
+    ])
+
+    const list = [...(sports?.data ?? []), ...(culture?.data ?? [])];
+
+    const sorted = list.sort(
+        (a, b) =>
+            new Date(b.datePublished) - new Date(a.datePublished)
+    );
+
+    return sorted;
+}
+
+export async function getNews({ locale = 'en', revalidate = 300 } = {}) {
+    const q = `/api/news?locale=${encodeURIComponent(locale)}&populate[seo][populate]=*`;
+    const data = await strapi(q, { revalidate });
+    return data || null;
+}
+
+export async function getNewsList({ locale = 'en' } = {}) {
+    const base = `?locale=${encodeURIComponent(locale)}&populate[banner][populate]=*&sort=datePublished:desc`;
 
     const [sports, culture] = await Promise.all([
         strapi(`/api/${CT.sports}${base}`),
