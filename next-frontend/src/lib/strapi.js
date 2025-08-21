@@ -1,10 +1,12 @@
+const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL || process.env.STRAPI_URL;
+
 export const CT = {
     sports: 'sports',
     culture: 'cultures',
 };
 
 export async function strapi(path, { revalidate = 300 } = {}) {
-    const base = process.env.STRAPI_URL;
+    const base = API_URL;
     const token = process.env.STRAPI_API_TOKEN;
 
     if (!base) throw new Error("STRAPI_URL is not defined");
@@ -17,8 +19,8 @@ export async function strapi(path, { revalidate = 300 } = {}) {
     }
 
     const res = await fetch(url, {
-        headers,
         next: { revalidate },
+        headers
     });
 
     if (res.status === 404) return null;
@@ -27,6 +29,10 @@ export async function strapi(path, { revalidate = 300 } = {}) {
         console.error("STRAPI_ERROR", { url, status: res.status, body: txt });
         throw new Error(`Strapi ${res.status} for ${url}\n${txt}`);
     }
+
+
+    console.log("TOKEN:", token);
+    console.log("HEADERS:", headers);
 
     return res.json();
 }

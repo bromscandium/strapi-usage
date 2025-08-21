@@ -10,21 +10,25 @@ export default function LoadMore({ topic, items, setItems, page, setPage, locale
         if (loading || !hasMore) return;
         setLoading(true);
 
-        const nextPage = (page?.[topic] ?? 1) + 1;
-        const res = await paginateNewsList({ locale, topic, pageNumber: nextPage });
-        const newItems = res?.data ?? [];
+        try {
+            const nextPage = (page?.[topic] ?? 1) + 1;
+            const res = await paginateNewsList({ locale, topic, pageNumber: nextPage });
+            const newItems = res?.data ?? [];
 
-        setItems(prev => [...prev, ...newItems]);
-        setPage(prev => ({ ...prev, [topic]: nextPage }));
+            setItems(prev => [...prev, ...newItems]);
+            setPage(prev => ({ ...prev, [topic]: nextPage }));
 
-
-        const meta = res?.meta?.pagination;
-        if (!meta || meta.page >= meta.pageCount) {
-            setHasMore(false);
+            const meta = res?.meta?.pagination;
+            if (!meta || meta.page >= meta.pageCount) {
+                setHasMore(false);
+            }
+        } catch (err) {
+            console.error("LOAD_MORE_ERROR", err);
+        } finally {
+            setLoading(false);
         }
-
-        setLoading(false);
     }
+
 
     if (!hasMore) return null;
 
