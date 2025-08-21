@@ -1,6 +1,6 @@
 import {getHome, getLatestNews, mediaUrl} from '@/lib/strapi';
 import Image from "next/image";
-import LoadMore from "@/components/buttons/LoadMore";
+import CheckMore from "@/components/buttons/CheckMore";
 
 export const revalidate = 300;
 
@@ -83,7 +83,7 @@ export default async function Page({ params }) {
                 </ul>
             </section>
 
-            <LoadMore locale={locale} />
+            <CheckMore locale={locale} />
         </main>
     );
 }

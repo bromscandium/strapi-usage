@@ -1,22 +1,27 @@
 "use client";
+import { useState } from "react";
+import { paginateNewsList } from "@/lib/strapi";
 
-import Link from "next/link";
-import {usePathname} from "next/navigation";
+export default function LoadMore({ topic, items, setItems, page, setPage, locale }) {
+    const [loading, setLoading] = useState(false);
 
-function withLocale(path, locale) {
-    return `/${locale}${path.startsWith('/') ? path : `/${path}`}`;
-}
+    async function handleClick() {
+        if (loading) return;
+        setLoading(true);
 
-export default function LoadMore({ locale }) {
-    const pathname = usePathname();
-    const isActive = (path) => pathname === withLocale(path, locale);
+        const nextPage = (page?.[topic] ?? 1) + 1;
+        const res = await paginateNewsList({ locale, topic, pageNumber: nextPage });
+        const newItems = res?.data ?? [];
+
+        setItems(prev => [...prev, ...newItems]);
+        setPage(prev => ({ ...prev, [topic]: nextPage }));
+
+        setLoading(false);
+    }
 
     return (
-        <Link
-            href={withLocale('/', locale)}
-            className={`px-3 py-2 rounded min-w-[90px] duration-200 text-center ${isActive('/news') ? 'bg-black text-white' : 'hover:bg-gray-200'}`}
-        >
-            {locale.startsWith('uk') ? 'Переглянути більше' : 'Check more'}
-        </Link>
+        <button onClick={handleClick} disabled={loading} className={`px-8 py-1 mt-8 rounded border duration-200  hover:bg-gray-200`}>
+            {loading ? "…" : "Load more"}
+        </button>
     );
 }

@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="543f2f42-2e8b-42a1-9a5f-d00e44f500ca" name="Changes" comment="basic view of website">
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/app/api/route/news.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-frontend/src/components/buttons/LoadMore.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/[slug]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/[slug]/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/news/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/app/[locale]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/app/[locale]/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/components/button/BackButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/components/buttons/BackButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-frontend/src/lib/strapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-frontend/src/lib/strapi.js" afterDir="false" />
-    </list>
+    <list default="true" id="543f2f42-2e8b-42a1-9a5f-d00e44f500ca" name="Changes" comment="added ui for home page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +95,7 @@
       <workItem from="1755526919739" duration="22200000" />
       <workItem from="1755613045761" duration="10329000" />
       <workItem from="1755707029157" duration="1107000" />
-      <workItem from="1755716519676" duration="8776000" />
+      <workItem from="1755716519676" duration="9090000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -162,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755720834592</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added ui for home page">
+      <option name="closed" value="true" />
+      <created>1755725729824</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755725729824</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +174,7 @@
     <MESSAGE value="news fixed" />
     <MESSAGE value="committed db (as example, made intentionally)" />
     <MESSAGE value="basic view of website" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic view of website" />
+    <MESSAGE value="added ui for home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ui for home page" />
   </component>
 </project>

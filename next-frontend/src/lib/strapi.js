@@ -1,43 +1,52 @@
-const BASE = process.env.STRAPI_URL;
+const BASE = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 export const CT = {
-    sports:  'sports',
+    sports: 'sports',
     culture: 'cultures',
 };
 
-export async function strapi(path, { revalidate = 300 } = {}) {
+export async function strapi(path, {revalidate = 300} = {}) {
     const url = `${BASE}${path}`;
+
     const res = await fetch(url, {
-        next: { revalidate },
+        next: {revalidate},
     });
+
 
     if (res.status === 404) return null;
 
     if (!res.ok) {
         const txt = await res.text();
-        console.error("STRAPI_ERROR", { url, status: res.status, body: txt });
+        console.error("STRAPI_ERROR", {url, status: res.status, body: txt});
         throw new Error(`Strapi ${res.status} for ${url}\n${txt}`);
     }
     return res.json();
 }
 
 export function mediaUrl(url) {
-    if (!url) return '';
-    return url.startsWith('http') ? url : `${BASE}${url}`;
+    if (!url) return "";
+    if (url.startsWith("http")) return url;
+    return `${process.env.NEXT_PUBLIC_STRAPI_URL}${url}`;
 }
 
-export async function getHome({ locale = 'en', revalidate = 300 } = {}) {
+export async function getHome({locale = 'en', revalidate = 300} = {}) {
     const q = `/api/home-page?locale=${encodeURIComponent(locale)}&populate[seo][populate]=*`;
-    const data = await strapi(q, { revalidate });
+    const data = await strapi(q, {revalidate});
     return data || null;
 }
 
-export async function getLatestNews({ locale = 'en'} = {}) {
+export async function getNews({locale = 'en', revalidate = 300} = {}) {
+    const q = `/api/news?locale=${encodeURIComponent(locale)}&populate[seo][populate]=*`;
+    const data = await strapi(q, {revalidate});
+    return data || null;
+}
+
+export async function getNewsList({locale = 'en'} = {}) {
     const base =
         `?locale=${encodeURIComponent(locale)}` +
         `&fields=title,slug,datePublished` +
         `&sort=datePublished:desc` +
-        `&populate[banner][fields][]=url`+
+        `&populate[banner][fields][]=url` +
         `&pagination[page]=1&pagination[pageSize]=${3}`;
 
     const [sports, culture] = await Promise.all([
@@ -45,37 +54,31 @@ export async function getLatestNews({ locale = 'en'} = {}) {
         strapi(`/api/${CT.culture}${base}`),
     ])
 
-    const list = [...(sports?.data ?? []), ...(culture?.data ?? [])];
-
-    const sorted = list.sort(
-        (a, b) =>
-            new Date(b.datePublished) - new Date(a.datePublished)
-    );
-
-    return sorted;
-}
-
-export async function getNews({ locale = 'en', revalidate = 300 } = {}) {
-    const q = `/api/news?locale=${encodeURIComponent(locale)}&populate[seo][populate]=*`;
-    const data = await strapi(q, { revalidate });
-    return data || null;
-}
-
-export async function getNewsList({ locale = 'en' } = {}) {
-    const base = `?locale=${encodeURIComponent(locale)}&populate[banner][populate]=*&sort=datePublished:desc`;
-
-    const [sports, culture] = await Promise.all([
-        strapi(`/api/${CT.sports}${base}`),
-        strapi(`/api/${CT.culture}${base}`),
-    ]);
-
     return {
         sports: sports?.data ?? [],
         culture: culture?.data ?? [],
     };
 }
 
-export async function getNewsBySlug({ locale = 'en', slug }) {
+export async function paginateNewsList({ locale = 'en', topic, pageNumber = 1 } = {}) {
+    const base =
+        `?locale=${encodeURIComponent(locale)}` +
+        `&fields=title,slug,datePublished` +
+        `&sort=datePublished:desc` +
+        `&populate[banner][fields][]=url` +
+        `&pagination[page]=${pageNumber}&pagination[pageSize]=3`;
+
+    return strapi(`/api/${CT[topic]}${base}`);
+}
+
+export async function getLatestNews({locale = 'en'} = {}) {
+    const { sports = [], culture = [] } = await getNewsList({ locale });
+    const all = [...sports, ...culture];
+
+    return all.sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
+}
+
+export async function getNewsBySlug({locale = 'en', slug}) {
     const q =
         `?filters[slug][$eq]=${encodeURIComponent(slug)}` +
         `&locale=${encodeURIComponent(locale)}` +
