@@ -1,29 +1,33 @@
-const BASE = process.env.NEXT_PUBLIC_STRAPI_URL;
-const TOKEN = process.env.STRAPI_API_TOKEN;
-
 export const CT = {
     sports: 'sports',
     culture: 'cultures',
 };
 
-export async function strapi(path, {revalidate = 300} = {}) {
-    const url = `${BASE}${path}`;
+export async function strapi(path, { revalidate = 300 } = {}) {
+    const base = process.env.STRAPI_URL;
+    const token = process.env.STRAPI_API_TOKEN;
+
+    if (!base) throw new Error("STRAPI_URL is not defined");
+
+    const url = `${base}${path}`;
+    const headers = {};
+
+    if (token) {
+        headers.Authorization = `Bearer ${token}`;
+    }
 
     const res = await fetch(url, {
-        next: {revalidate},
-        headers: {
-            Authorization: `Bearer ${TOKEN}`,
-        },
+        headers,
+        next: { revalidate },
     });
 
-
     if (res.status === 404) return null;
-
     if (!res.ok) {
         const txt = await res.text();
-        console.error("STRAPI_ERROR", {url, status: res.status, body: txt});
+        console.error("STRAPI_ERROR", { url, status: res.status, body: txt });
         throw new Error(`Strapi ${res.status} for ${url}\n${txt}`);
     }
+
     return res.json();
 }
 
