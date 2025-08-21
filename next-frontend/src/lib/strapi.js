@@ -1,4 +1,5 @@
 const BASE = process.env.NEXT_PUBLIC_STRAPI_URL;
+const TOKEN = process.env.STRAPI_API_TOKEN;
 
 export const CT = {
     sports: 'sports',
@@ -10,6 +11,9 @@ export async function strapi(path, {revalidate = 300} = {}) {
 
     const res = await fetch(url, {
         next: {revalidate},
+        headers: {
+            Authorization: `Bearer ${TOKEN}`,
+        },
     });
 
 
