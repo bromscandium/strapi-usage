@@ -11,6 +11,7 @@ export default function NewsSection({title, initialItems, topic, locale}) {
 
     return (
         <section className="container py-8">
+            <h3 className="text-xl font-bold mb-2">{title}</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {items.map((n) => {
                     const img = n.banner?.url;

@@ -4,9 +4,10 @@ import { paginateNewsList } from "@/lib/strapi";
 
 export default function LoadMore({ topic, items, setItems, page, setPage, locale }) {
     const [loading, setLoading] = useState(false);
+    const [hasMore, setHasMore] = useState(true);
 
     async function handleClick() {
-        if (loading) return;
+        if (loading || !hasMore) return;
         setLoading(true);
 
         const nextPage = (page?.[topic] ?? 1) + 1;
@@ -16,12 +17,24 @@ export default function LoadMore({ topic, items, setItems, page, setPage, locale
         setItems(prev => [...prev, ...newItems]);
         setPage(prev => ({ ...prev, [topic]: nextPage }));
 
+
+        const meta = res?.meta?.pagination;
+        if (!meta || meta.page >= meta.pageCount) {
+            setHasMore(false);
+        }
+
         setLoading(false);
     }
 
+    if (!hasMore) return null;
+
     return (
-        <button onClick={handleClick} disabled={loading} className={`px-8 py-1 mt-8 rounded border duration-200  hover:bg-gray-200`}>
-            {loading ? "…" : "Load more"}
+        <button
+            onClick={handleClick}
+            disabled={loading}
+            className="px-8 py-1 mt-8 rounded border duration-200 hover:bg-gray-200"
+        >
+            {loading ? "..." : "Load more"}
         </button>
     );
 }
